@@ -1,0 +1,492 @@
+html {
+    scroll-behavior: smooth;
+    /* Tüm sayfa boyunca yumuşak kaydırma */
+}
+
+/* Navbar Customization */
+.navbar-custom {
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Yarı saydam arka plan */
+    backdrop-filter: blur(8px);
+    /* Hafif bulanıklık efekti */
+    padding: 1rem 0;
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;  /* Logo ve ismi yan yana getirmek için flex kullanıyoruz */
+    align-items: center;
+}
+
+/* Logo boyutunu küçültme */
+.logo {
+    width: 30px;  /* Logo boyutunu küçültmek için */
+    height: auto;
+    margin-right: 10px; 
+    background-color: #ffcc00; /* Logo ile metin arasında boşluk bırakma */
+}
+
+/* Navbar Logo Styling */
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #ffcc00;
+    /* Diğer menü öğeleriyle aynı hover rengi */
+}
+
+.navbar-brand:focus {
+    outline: none;
+    /* Tıklandığında çerçeve etkisini kaldırır */
+}
+
+/* Navbar Links Styling */
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffcc00;
+    /* Aktif ve hover rengi */
+}
+
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 600;
+}
+
+/* Social Media Icons Styling */
+/* Navbar Social Icons */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 20px; /* Sağdan mesafeyi koruyoruz */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social-link {
+    font-size: 1.2rem; /* Varsayılan boyut */
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffcc00;
+    transform: scale(1.1); /* Hover ile biraz büyütme */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .social-icons {
+        position: static; /* Sabit yerleşimi kaldırıyoruz */
+        justify-content: center; /* Ortalıyoruz */
+        margin-top: 1rem; /* Hafif boşluk ekliyoruz */
+    }
+
+    .social-link {
+        font-size: 1rem; /* Küçük ekranlar için boyutu küçültüyoruz */
+    }
+}
+
+/* Carousel Styling */
+.carousel-inner img {
+    height: 70vh;
+    object-fit: cover;
+
+}
+
+#carouselExample{
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5) !important; /* Alt kısma hafif gölge */
+    z-index: 1; /* Gölgenin görünmesi için katman ayarı */
+    position: relative; 
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Caption arka planını yarı şeffaf yapar */
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    color: #dddddd;
+    margin-top: 0.5rem;
+}
+
+body {
+    padding-top: 0;
+}
+
+.carousel {
+    margin-top: 0px;
+}
+
+/* About Section Styling */
+/* About Section Styling */
+.about-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, #686868 0%, #373738 100%); /* Gradient geçiş */
+    background-attachment: fixed; /* Sayfa kaydığında arka plan sabit kalır */
+    background-size: cover; /* Arka plan tüm alanı kaplar */
+    color: #ffffff; /* Yazı rengini beyaz yapalım ki kontrastı arttıralım */
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5) !important; /* Alt kısma hafif gölge */
+    z-index: -1;
+
+}
+
+/* Hafif Doku */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/white-paper.png'); /* Hafif dokulu bir SVG deseni */
+    opacity: 0.15; /* Dokunun şeffaflığı */
+    pointer-events: none; /* Kullanıcı etkileşimini engeller */
+}
+
+.about-image {
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    /* Hafif gölge efekti */
+    max-width: 90%;
+    /* Görselin kutuyu aşmaması için */
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #ffffff;
+    /* Başlık için koyu ama yumuşak bir ton */
+    margin-bottom: 1rem;
+}
+
+.about-text {
+    font-size: 1rem;
+    color: #ffffff;
+    /* Yazı için orta koyulukta bir gri */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+/* Projects Section Styling */
+.projects-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, #ebe8e8 0%, #888897 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #000000;
+    position: relative;
+    box-shadow: 0px 10px 20px 30px rgba(0, 0, 0, 0.1) !important; /* Alt kısma hafif gölge */
+    z-index: 1;
+
+}
+
+/* Hafif Doku */
+.projects-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/white-paper.png');
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* İçerik katmanını dokunun üstünde tutmak için */
+.projects-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Project Card Styling */
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #c2b896;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+/* Responsive Styling for Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Kartlar arasındaki mesafeyi arttır */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+/* Contact Section Styling */
+.contact-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, #686868 0%, #373738 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5) !important; /* Alt kısma hafif gölge */
+
+}
+
+/* Hafif Doku */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/white-paper.png');
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* İçerik katmanını dokunun üstünde tutmak için */
+.contact-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Title */
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Hafif şeffaf form arka planı */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Input and Textarea Styling */
+.contact-form .form-control {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #524d3b;
+    box-shadow: 0 0 5px rgba(82, 77, 59, 0.5);
+    outline: none;
+}
+
+/* Submit Button */
+.contact-form .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #c2b896;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-form .btn-submit:hover {
+    background-color: #ffcc00;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+
+/* Footer Styling */
+.footer {
+    padding: 2rem 0;
+    background: linear-gradient(180deg, #373738 0%, #000000 100%);
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+/* Hafif Doku */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/white-paper.png');
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* İçerik katmanını dokunun üstünde tutmak için */
+.footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffcc00;
+}
+
+/* Footer Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem; /* Varsayılan boyut */
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+    transform: translateY(-3px);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .social-icons {
+        flex-wrap: wrap; /* Mobilde ikonların bir satırda sıkışmaması için */
+        gap: 0.5rem; /* İkonlar arası boşluğu küçültüyoruz */
+    }
+
+    .social-icons a {
+        font-size: 1.2rem; /* Küçük ekranlar için ikon boyutunu küçültüyoruz */
+    }
+}
+/* Copyright Text */
+.footer p {
+    margin-top: 1rem;
+    color: #bbbbbb;
+    font-size: 0.85rem;
+}
+
+.footer p a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footer p a:hover {
+    text-decoration: underline;
+}
